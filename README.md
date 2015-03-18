@@ -8,4 +8,4 @@ Full documentation is online at http://www.bbzzdd.com/plugproxy
 
 ![Alt text](https://github.com/wrpkm/PlugProxy/blob/master/screenshot.jpg "PlugProxy")
 
-![Alt text](https://github.com/wrpkm/PlugProxy/blob/master/PlugProxy.zip "PlugProxy Download")
+![PlugProxy.zip](https://github.com/wrpkm/PlugProxy/blob/master/PlugProxy.zip "PlugProxy Download")
