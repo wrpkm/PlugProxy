@@ -1,7 +1,7 @@
 PlugProxy 2.0
 -------------
 
-Full documentation is online at http://www.bbzzdd.com/plugproxy
+Original full documentation is online at http://www.bbzzdd.com/plugproxy
 
 - Added the ability to direct activity into a log file.
 - Added incoming and outgoing delay frequency and times to allow testing of network latency issues.
