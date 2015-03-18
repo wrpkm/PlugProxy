@@ -1,0 +1,53 @@
+<?xml version='1.0'?>
+
+<!-- Ant build XML to build PlugProxy -->
+
+<project name="common" default="build" basedir=".">
+	<property file="${user.home}/.ant.properties"/>
+
+	<property name="name" value="plugproxy"/>
+	<property name="project.dir" value="."/>
+	<property name="src.dir" value="${project.dir}/src"/>
+	<property name="build.dir" value="${project.dir}/build"/>
+	<property name="deploy.dir" value="${project.dir}"/>
+	<property name="build.compiler" value="modern"/>
+
+	<!-- Prepare the build directory -->
+	<target name="prepare">
+		<mkdir dir="${build.dir}"/>
+		<tstamp/>
+	</target>
+
+	<!-- Builds the application -->
+	<target name="build" depends="prepare">
+		<javac srcdir="${src.dir}"
+		       destdir="${build.dir}"
+		       debug="off"
+		       deprecation="on"
+		       optimize="on">
+			<include name="**/*.java"/>
+		</javac>
+
+        <copy todir="${build.dir}/${name}">
+			<fileset dir="${src.dir}">
+				<include name="**/*.gif"/>
+			</fileset>
+		</copy>
+
+	</target>
+
+	<!-- Creates a jar file containing the application class files and manifest -->
+	<target name="jar" depends="build">
+		<jar jarfile="${project.dir}/${name}.jar"
+		     basedir="${build.dir}"
+             includes="**/*.gif,${name}/**"
+		     manifest="${project.dir}/manifest.txt"/>
+	</target>
+
+	<!-- Cleans up the class files from the build dir -->
+	<target name="clean">
+		<delete>
+			<fileset dir="${build.dir}" includes="**/*.class,**/*.gif"/>
+		</delete>
+	</target>
+</project>
